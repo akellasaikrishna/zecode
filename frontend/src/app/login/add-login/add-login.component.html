@@ -1,0 +1,65 @@
+<div class="container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <h2>ZeCode Add User</h2>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="register-screen-content">
+      <form [formGroup]="newUserForm">
+        <div class="input-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              required
+              type="email"
+              formControlName="email"
+              matInput
+              placeholder="ex: abc@zessta.com"
+            />
+            <span matSuffix>@zessta.com</span>
+            <mat-hint
+              *ngIf="emailErr"
+              align="end"
+              style="color: red;
+            font-size: 12px;
+            font-weight: 600;"
+              >@ character is not allowed here</mat-hint
+            >
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              required
+              type="password"
+              formControlName="password"
+              matInput
+              placeholder="Password"
+            />
+          </mat-form-field>
+        </div>
+      </form>
+      <div style="display: flex; cursor: pointer;" (click)="login()">
+        <mat-icon
+          aria-hidden="false"
+          style="color: #6c5ce7; margin-top: 0.4em;"
+          aria-label="login"
+          >chevron_left</mat-icon
+        >
+        <p class="add-new-user">Login</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions
+      ><div class="button-container">
+        <button
+          [disabled]="!newUserForm.valid || emailErr"
+          class="submit-button"
+          (click)="addUser()"
+          mat-raised-button
+          color="primary"
+        >
+          Add New
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

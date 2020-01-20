@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <h2>Test Creation Form</h2>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="mat-card-container">
+      <form [formGroup]="registerForm">
+        <div class="input-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="ex : johndoe@example.com"
+              [matAutocomplete]="auto"
+              required
+            />
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngIf="searchResult != null" (click)="buildForm()">
+                {{ searchResult?.name }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input
+              required
+              formControlName="name"
+              matInput
+              placeholder="ex : John Doe"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Test Duration</mat-label>
+            <input
+              formControlName="testDuration"
+              matInput
+              required
+              placeholder="minutes"
+              type="number"
+              min="0"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Test</mat-label>
+            <mat-select multiple formControlName="test">
+              <mat-option *ngFor="let item of tests" [value]="item.testValue">
+                {{ item.testName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="select-ques-con">
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip color="primary" (click)="openQuestionsPopup()" selected
+            ><mat-icon>add</mat-icon>Select Questions</mat-chip
+          >
+        </mat-chip-list>
+        <mat-icon
+          class="tooltip"
+          [matTooltip]="questionsTooltip"
+          *ngIf="registerForm.controls['questions'].valid"
+          >info</mat-icon
+        >
+      </div>
+    </mat-card-content>
+    <mat-card-actions
+      ><div class="button-container">
+        <button
+          class="submit-button"
+          [disabled]="!registerForm.valid"
+          (click)="submit()"
+          mat-raised-button
+          color="primary"
+        >
+          Create Test
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

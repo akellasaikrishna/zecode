@@ -1,0 +1,30 @@
+.register-card {
+  min-width: 60vh;
+  min-height: 50vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container > * {
+  width: 100%;
+}
+
+.select-ques-con {
+  display: flex;
+  align-items: center;
+}
+
+.tooltip {
+  margin: 0em 0.2em;
+  cursor: pointer;
+}

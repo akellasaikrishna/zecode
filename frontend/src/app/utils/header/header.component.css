@@ -1,0 +1,14 @@
+.button {
+    cursor: pointer;
+    background-color: #673AB7;
+    padding: 0.7em;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+  }
+  
+  .m-l-1 {
+    /* margin-left: 1em; */
+  }
+  
+  
+  

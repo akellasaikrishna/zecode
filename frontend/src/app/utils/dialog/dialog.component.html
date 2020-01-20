@@ -1,0 +1,31 @@
+<div class="dialog-box-container">
+  <div>
+    <h2>{{ dialogBoxTitle }}</h2>
+  </div>
+
+  <div>
+    <div class="input-container">
+      <mat-form-field appearance="outline">
+        <input
+          id="link-text-field"
+          style="width: 100%;"
+          matInput
+          placeholder="Generated Link"
+          #linkInput
+          [value]="link"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div>
+    <button
+      (click)="copyLink(linkInput)"
+      class="copy-link-button"
+      mat-raised-button
+      color="primary"
+    >
+      Copy Link
+    </button>
+  </div>
+</div>

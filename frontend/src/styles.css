@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.template-value::before {
+  content: ": ";
+}
+
+.template-title::after {
+  content: " ";
+}
+
+.testDetailsTemplate {
+  display: flex;
+}
+
+.container {
+  margin: 1em;
+  min-height: 85%;
+  height: auto;
+}
+
+.mat-card-container {
+  margin: 20px;
+  /* display: flex; */
+}
+
+.test-selection-container {
+  margin: 1em 1.2em;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mat-form-field-infix {
+  display: flex !important;
+}
+
+.remove-button-icon {
+  float: right;
+  background-color: #ff7675;
+  color: white;
+  margin-top: 0.6em !important;
+}
+
+.register-card {
+  min-width: 60vh;
+  min-height: 50vh;
+}
+.register-screen-content {
+  margin: 50px 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container > * {
+  width: 100%;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  width: 9em;
+  min-height: 50px;
+  font-size: 15px;
+}
+
+.add-new-user {
+  float: right;
+  cursor: pointer;
+  color: #6c5ce7;
+  font-weight: 700;
+}
+
+.google-login-button {
+  width: 9em;
+  min-height: 50px;
+  font-size: 15px;
+  color: black !important;
+  background-color: white !important;
+}
+
+.utitlities-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 90% !important;
+}

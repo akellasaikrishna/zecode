@@ -1,0 +1,47 @@
+.container {
+  margin: 1em;
+  min-height: 85%;
+  height: auto;
+}
+
+.details-container {
+  margin: 0px 15px;
+}
+
+.questions-container {
+  margin: 0px 15px;
+}
+
+.answer-snippet {
+  width: 80%;
+  height: 500px;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.iframe {
+  display: flex;
+  justify-content: center;
+}
+
+.question-body {
+  font-size: 17px;
+}
+
+.m-t-4 {
+  margin-top: 4em;
+}
+
+.submit-response-btn {
+  /* float: right; */
+  margin: 1em 0.5em 2em 0em;
+}
+
+.submit-test-btn-container {
+  width: 100%;
+}
+
+.submit-test-btn {
+  float: right;
+}

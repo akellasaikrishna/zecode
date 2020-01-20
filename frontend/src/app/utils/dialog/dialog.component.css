@@ -1,0 +1,18 @@
+.dialog-box-container {
+  display: block;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container > * {
+  width: 100%;
+}
+
+.copy-link-button {
+    min-height: 50px;
+    font-size: 15px;
+  }

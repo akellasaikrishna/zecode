@@ -1,0 +1,44 @@
+<div class="dialog-box-container">
+  <div>
+    <h2>Submit Test Feedback</h2>
+  </div>
+
+  <div>
+    <form [formGroup]="creditsForm" class="example-form">
+      <div class="input-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Credits</mat-label>
+          <!-- style="width: 6%;" -->
+          <input
+            required
+            matInput
+            formControlName="testCredits"
+            placeholder="Out of 10"
+            max="10"
+          />
+          <span matSuffix>/10</span>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Comments</mat-label>
+          <textarea
+            formControlName="testComments"
+            required
+            matInput
+            placeholder="Please provide comments for the test"
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+
+  <div>
+    <button
+      (click)="submitCredits()"
+      class="copy-link-button"
+      mat-raised-button
+      color="primary"
+    >
+      Submit Credits
+    </button>
+  </div>
+</div>

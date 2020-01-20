@@ -1,0 +1,85 @@
+<app-header *ngIf="hideItems"></app-header>
+<mat-card class="container">
+  <mat-card-header>
+    <div style="width: 100%;">
+      <mat-card-title>{{ data?.name }}</mat-card-title>
+      <mat-card-subtitle>
+        <div>
+          <div class="testDetailsTemplate">
+            <h4 class="template-title">Date</h4>
+            <h4 class="template-value">{{ data?.date | date }}</h4>
+          </div>
+          <div class="testDetailsTemplate">
+            <h4 class="template-title">Test</h4>
+            <h4 class="template-value" appTestTitle>{{ data?.test }}</h4>
+          </div>
+        </div>
+      </mat-card-subtitle>
+    </div>
+    <div class="submit-test-btn-container">
+      <button
+        *ngIf="!hideItems"
+        [disabled]="questions.length != codeResponsesArray.length"
+        (click)="submitTest()"
+        class="submit-test-btn"
+        mat-raised-button
+        color="primary"
+      >
+        Submit Test
+      </button>
+      <button
+        *ngIf="hideItems && !isCreditsPresent"
+        (click)="submitScore(data)"
+        class="submit-test-btn"
+        mat-raised-button
+        color="primary"
+      >
+        Submit Test Score
+      </button>
+      <h1 class="submit-test-btn" *ngIf="isCreditsPresent">
+        {{ credits }} / 10
+      </h1>
+      <span *ngIf="isCreditsPresent">
+        <h3>Comments</h3>
+        <p>{{ testComments }}</p>
+      </span>
+    </div>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <div class="questions-container">
+      <mat-tab-group dynamicHeight>
+        <mat-tab
+          *ngFor="let item of questions; let i = index"
+          [label]="tabLabel(i)"
+        >
+          <div style="display: flex; margin-top: 2em;">
+            <p>
+              <b>Question: {{ item?.question }}</b>
+            </p>
+          </div>
+          <div>
+            <button
+              (click)="embedProject(i, item?.projectSetup)"
+              class="submit-response-btn"
+              mat-raised-button
+              color="primary"
+            >
+              Show Code Window
+            </button>
+            <button
+              *ngIf="!hideItems"
+              (click)="submitResponse(i)"
+              class="submit-response-btn"
+              mat-raised-button
+              color="primary"
+            >
+              Submit Response
+            </button>
+          </div>
+          <div [id]="i"></div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card-content>
+</mat-card>

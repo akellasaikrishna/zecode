@@ -1,0 +1,42 @@
+<div class="container">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <h2>Code Test</h2>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content class="register-screen-content">
+      <form [formGroup]="candidateForm">
+        <div class="input-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput placeholder="Name" />
+          </mat-form-field>
+        </div>
+      </form>
+      <div style="margin-left: 0.5em;" class="m-l-1-2">
+        <div class="testDetailsTemplate">
+          <p><b>Test Date</b></p>
+          <p class="template-value">{{ this.candidateDetails?.date | date }}</p>
+        </div>
+        <div class="testDetailsTemplate">
+          <p><b>Test</b></p>
+          <p class="template-value" appTestTitle>
+            {{ this.candidateDetails?.test }}
+          </p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions
+      ><div class="button-container">
+        <button
+          class="submit-button"
+          (click)="startTest()"
+          mat-raised-button
+          color="primary"
+        >
+          Start Test
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

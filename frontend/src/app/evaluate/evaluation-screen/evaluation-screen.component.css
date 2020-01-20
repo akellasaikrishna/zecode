@@ -1,0 +1,32 @@
+.test-container {
+  margin: 1em;
+}
+
+.test-details-container {
+  margin: 0.5em 1em;
+  display: flex;
+}
+
+.fl-l {
+  width: 85%;
+  float: left;
+}
+
+.fl-r {
+  width: 15%;
+  float: right;
+}
+
+.credits {
+  margin: 0.9em;
+}
+
+.not-completed {
+  background-color: #27ae60;
+  color: white;
+}
+
+.completed {
+  background-color: #e74c3c;
+  color: white;
+}

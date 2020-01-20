@@ -1,0 +1,89 @@
+<app-header></app-header>
+<div class="utitlities-container">
+  <div class="container">
+    <mat-card class="register-card">
+      <mat-card-header>
+        <h2>Add New Domain</h2>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="register-screen-content">
+        <form [formGroup]="newTestForm">
+          <div class="input-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Domain</mat-label>
+              <input
+                formControlName="testName"
+                matInput
+                placeholder="ex: abc"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Domain Code</mat-label>
+              <input
+                formControlName="testValue"
+                matInput
+                placeholder="ex: 1 2 3"
+              />
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions
+        ><div class="button-container">
+          <button
+            [disabled]="!newTestForm.valid"
+            class="submit-button"
+            (click)="addTest()"
+            mat-raised-button
+            color="primary"
+          >
+            Add Test
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="container">
+    <mat-card class="register-card">
+      <mat-card-header>
+        <h2>Add Job Role</h2>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="register-screen-content">
+        <form [formGroup]="newJobForm">
+          <div class="input-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Job Role Title</mat-label>
+              <input
+                formControlName="jobRoleTitle"
+                matInput
+                placeholder="ex: abc"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>Job Role ID</mat-label>
+              <input
+                formControlName="jobRoleID"
+                matInput
+                placeholder="ex: 1 2 3"
+              />
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions
+        ><div class="button-container">
+          <button
+            [disabled]="!newJobForm.valid"
+            class="submit-button"
+            (click)="addJobRole()"
+            mat-raised-button
+            color="primary"
+          >
+            Add Role
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

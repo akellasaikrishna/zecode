@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="padding-top: 15px; display: block !important;">
+    <span style="float: left;">
+      <span>ZeCode</span>
+      <span style="margin-left: 2em;">
+        <span class="m-l-1 button" (click)="create()"
+          >Create New Assessment</span
+        >
+        <span style="margin: 0px 8px;">|</span>
+        <span class="m-l-1 button" (click)="evaluate()">Evaluate Tests</span>
+        <span style="margin: 0px 8px;">|</span>
+        <span class="m-l-1 button" (click)="addNewTests()">Utilities</span>
+        <span style="margin: 0px 8px;">|</span>
+        <span class="m-l-1 button" (click)="questionBank()">Question Bank</span>
+      </span>
+    </span>
+    <span style="float: right;">
+      <button
+        (click)="logout()"
+        mat-icon-button
+        aria-label="Example icon-button with a heart icon"
+      >
+        <mat-icon>power_settings_new</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>

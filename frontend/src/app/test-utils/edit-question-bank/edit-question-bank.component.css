@@ -1,0 +1,14 @@
+.questions-container {
+  min-width: 98%;
+  margin: 0em 1em;
+}
+
+.button-container {
+  width: 98% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.add-more {
+  margin-left: 1em;
+}
